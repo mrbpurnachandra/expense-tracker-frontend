@@ -1,9 +1,12 @@
-import { PieChart, Pie, Tooltip, ResponsiveContainer, Legend } from 'recharts'
+import { PieChart, Pie, Tooltip, Legend } from 'recharts'
 
 export default function ExpenseChart({ expenses }) {
     const data = extractData(expenses)
 
-    console.log(data)
+    if (!data.length) {
+        return null
+    }
+    
     return (
         <>
             <h4>Summary of your expenses</h4>
